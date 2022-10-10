@@ -1,7 +1,7 @@
 import pigpio
 import curses
 
-import calibrate_parameters
+from calibrate_parameters import *
 
 is_up = False
 

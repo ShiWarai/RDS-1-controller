@@ -6,7 +6,7 @@ from pigpio import pi
 
 from controller import MyController
 
-import calibrate_parameters
+from calibrate_parameters import *
 
 
 def range(old_max, old_min, new_max, new_min, value):
@@ -31,25 +31,13 @@ SPEED_TOP = 10
 STEP_X = 200
 STEP_Y = 150
 
-SRV_UP_FR = ((2, 1650, 1650),)
-SRV_UP_FL = ((14, 1450, 1450),)
-SRV_UP_BR = ((18, 1650, 1650),)
-SRV_UP_BL = ((23, 1550, 1550),)
-SRV_UP = SRV_UP_FR + SRV_UP_FL + SRV_UP_BR + SRV_UP_BL
-
-SRV_FR = ((3, 2170, 1800), (4, 1080, 1310))
-SRV_FL = ((15, 640, 930), (17, 1970, 1730))
-SRV_BR = ((27, 720, 1000), (22, 2030, 1790))
-SRV_BL = ((24, 2290, 2000), (25, 1010, 1280))
-SRV_ALL = SRV_UP + SRV_FR + SRV_FL + SRV_BR + SRV_BL
-
 # Do not change (predeclaration for later)
 walk = False  # True - walk, False - stay still
 turn = True  # True - control turn, False - control sideways walk
 step_height = 1.0  # min 0.0 -> max 1.0
 idle = 0  # time in sec since lats stick (walk) input
 speed = SPEED_MIN  # current speed mode
-quad = 0  # | Keep walk directions to prevent mid step changes
+quad = 0    # | Keep walk directions to prevent mid step changes
 pair_a = 0  # |
 pair_b = 0  # |
 
